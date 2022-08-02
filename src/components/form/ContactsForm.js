@@ -1,7 +1,8 @@
 import React from 'react';
-import { ContainerForm, ButtonForm, InputForm } from './ContactsForm.styled';
-import { Formik } from 'formik';
+import { ContainerForm, ButtonForm, InputForm, Error } from './ContactsForm.styled';
+import { Formik,  } from 'formik';
 import * as yup from 'yup';
+
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -19,6 +20,8 @@ const ContactsForm = ({ onSubmit }) => {
     resetForm();
   };
 
+
+
   return (
     <>
       <Formik
@@ -31,10 +34,12 @@ const ContactsForm = ({ onSubmit }) => {
             <h3>Name</h3>
             <InputForm type="text" name="name" />
           </label>
+          <Error name='name' component={"p"} />
           <label>
             <h3>Number</h3>
             <InputForm htmlFor="number" type="tel" name="number" />
           </label>
+          <Error name='number' component={"p"}/>
           <ButtonForm type="submit">Add contacts</ButtonForm>
         </ContainerForm>
       </Formik>

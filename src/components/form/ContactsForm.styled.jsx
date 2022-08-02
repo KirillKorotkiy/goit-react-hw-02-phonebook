@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Form, Field } from 'formik';
+import { Form, Field, ErrorMessage } from 'formik';
 
 export const ContainerForm = styled(Form)`
     border: 1px solid black;
@@ -19,4 +19,8 @@ export const InputForm = styled(Field)`
 export const ButtonForm = styled.button`
      height: 25px;
     
+`
+export const Error = styled(ErrorMessage)`
+color:red;
+margin: 10px 0px;
 `
