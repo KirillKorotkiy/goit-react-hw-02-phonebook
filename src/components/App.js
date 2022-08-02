@@ -17,12 +17,12 @@ class App extends React.Component {
     filter: '',
   };
 
-  onSubmitHandler = (data) => {
+  onSubmitHandler = ({name, number}) => {
     const {contacts} = this.state;
     const newContact = {
       id: nanoid(),
-      name: data.name,
-      number: data.number,
+      name: name,
+      number: number,
     }
 
    if(contacts.find(contact=> contact.name === newContact.name)){
